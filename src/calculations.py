@@ -4,7 +4,7 @@ from mujoco import minimize
 import time
 import numpy as np
 
-model = mujoco.MjModel.from_xml_path('model.xml')
+model = mujoco.MjModel.from_xml_path('../data/model.xml')
 data = mujoco.MjData(model)
 end_time = 5
 
@@ -145,7 +145,7 @@ print(torques_data)
 #             f"{q[0]},{q[1]},{q[2]},{q[3]}, {dq[0]}, {dq[1]}, {dq[2]}, {dq[3]}, {ddq[0]}, {ddq[1]}, {ddq[2]}, {ddq[3]}, {tau[0]}, {tau[1]}, {tau[2]}, {tau[3]}\n")
 
 
-with open('trajectory_data.csv', 'w') as f:
+with open('../data/trajectory_data.csv', 'w') as f:
     for q, dq, tau in zip(q_t, dq_t, torques_data):
         f.write(
             f"{q[0]},{q[1]},{q[2]},{q[3]}, {dq[0]}, {dq[1]}, {dq[2]}, {dq[3]}, {ddq[0]}, {ddq[1]}, {ddq[2]}, {ddq[3]}, {tau[0]}, {tau[1]}, {tau[2]}, {tau[3]}\n")

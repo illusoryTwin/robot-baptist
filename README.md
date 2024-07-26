@@ -62,4 +62,4 @@ $$
 \ddot{q}(t) = J^+(q)\cdot(\ddot{X}(t) - \frac{dJ(q)}{dt}\cdot\dot{q}(t))
 $$
 
-![sim](robo_cross.gif)
+![sim](assets/robo_cross.gif)

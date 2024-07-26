@@ -4,7 +4,7 @@ from mujoco import minimize
 import time
 import numpy as np
 
-model = mujoco.MjModel.from_xml_path('model.xml')
+model = mujoco.MjModel.from_xml_path('../data/model.xml')
 data = mujoco.MjData(model)
 # Initialize lists to store the data
 q_t = []
@@ -16,7 +16,7 @@ end_time = 30
 
 # Open the file and read lines
 # with open('trajectory_data.txt', 'r') as file:
-with open('trajectory_data.csv', 'r') as file:
+with open('../data/trajectory_data.csv', 'r') as file:
     lines = file.readlines()
 
 # Process each line
