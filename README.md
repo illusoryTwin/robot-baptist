@@ -32,13 +32,13 @@ $$
 \ddot{s}(t) = 2a_2 + 6a_3t + 12a_4t^2 + 20a_5t^3
 $$
 
-Assuming that \( s(0)=0 \), \( s(T)=1 \), \( \dot{s}(0)=0 \), \( \dot{s}(T)=0 \), \( \ddot{s}(0)=0 \), \( \dot{s}(T)=0 \), we can obtain the following parameters:
+Assuming that $s(0)=0$, $s(T)=1$, $\dot{s}(0)=0$, $\dot{s}(T)=0$, $\ddot{s}(0)=0$, $\dot{s}(T)=0$, we can obtain the following parameters:
 
 $$
 a_0 = a_1 = a_2 = 0; \quad a_3=\frac{10}{T^3};\quad a_4 = -\frac{15}{T^4}; \quad a_5=\frac{6}{T^5}
 $$
 
-If you have a limitation on velocity in Cartesian space, you can use the following formula for \( T \) to achieve the maximum velocity in the middle of the trajectory:
+If you have a limitation on velocity in Cartesian space, you can use the following formula for $T$ to achieve the maximum velocity in the middle of the trajectory:
 
 $$
 T = \frac{15}{8}\frac{\sqrt{(X_{end} - X_{start})^T(X_{end} - X_{start})}}{v_{max}}
