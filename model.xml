@@ -1,0 +1,47 @@
+<mujoco>
+    <option timestep="0.0001"/>
+    <option gravity="0 0 -9.81"/>
+    <worldbody>
+        <geom type="plane" size="10 10 0.1" pos="0 0 -0.5" rgba="1 0 0 1"/>
+        <light diffuse="0.7 0.7 0.7" pos="0 0 3"/>
+        <body name="torso" pos="0.2 0.25 0">
+<!--            <geom type="box" pos="0 0.665 0" size="0.03 0.06 0.064" rgba="0.5 0.5 0.5 1"/>-->
+            <geom type="box" pos="0 0.065 0" size="0.03 0.06 0.064" rgba="0.5 0.5 0.5 1"/>
+            <body name="arm" pos="0 0 0">
+                <joint name="pitch_shoulder" pos="0 0 0" axis="0 1 0"/>
+
+<!--                <joint name="pitch_shoulder" pos="0 0 0" axis="0 1 0" range="0 180"/>-->
+                <geom type="cylinder" size="0.0198 0.0115" pos="0 0 0" rgba="0.1 0.1 0.1 1" euler="90 0 0" mass="0.065"/>
+                <body name="torse_part2" pos="0 -0.031 0">
+                    <joint name="yaw_shoulder" pos="0 0 0" axis="0 0 1"/>
+
+<!--                    <joint name="yaw_shoulder" pos="0 0 0" axis="0 0 1" range="-180 0"/>-->
+<!--                    <joint name="shoulder2" pos="0 0 0" axis="0 0 1" range="-2 2"/>-->
+                    <geom type="cylinder" size="0.0198 0.0115" pos="0 0 0" rgba="0.1 0.1 0.1 1" mass="0.065"/>
+                    <body name="body3" pos="0.03 0 0">
+                        <joint name="roll_shoulder" axis="1 0 0"/>
+
+<!--                        <joint name="roll_shoulder" axis="1 0 0" range="-60 30"/>-->
+                        <geom type="cylinder" size="0.0198 0.0115" pos="0 0 0" rgba="0.1 0.1 0.1 1" euler="0 90 0" mass="0.065"/>
+                        <body name="elbow" pos="0.095 0 0">
+                            <geom type="box" size="0.1 0.0025 0.02" pos="0 -0.0225 0" rgba="0 0.8 0.2 1" mass="0.02"/>
+                            <geom type="box" size="0.1 0.0025 0.02" pos="0 0.0225 0" rgba="0 0.8 0.2 1" mass="0.02"/>
+                            <body pos="0.1 0 0">
+                                <joint name="elbow_joint" pos="0 0 0" axis="0 1 0"/>
+<!--                                <joint name="elbow_joint" pos="0 0 0" axis="0 1 0" range="-90 0"/>                             <joint pos="0 0 0" axis="0 1 0" range="-90 0"/>-->
+                                <geom type="cylinder" size="0.0198 0.02" pos="0 0 0" euler="90 0 0" rgba="0.1 0.1 0.1 1" mass="0.065"/>
+                                <body pos="0.1 0 0">
+                                    <geom type="box" size="0.1 0.012 0.01" pos="0 0 0" rgba="1 0 1 1" mass="0.02"/>
+                                    <body name="end_effector" pos="0.1 0 0">
+                                        <geom type="sphere" size="0.015" pos="0.015 0 0" rgba="1 0.7 0.6 1" mass="0.05"/>
+                                        <site name="end_effector"/>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>
